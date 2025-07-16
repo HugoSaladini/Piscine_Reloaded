@@ -1,22 +1,14 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar
-ARFLSGS = rcs
-
-SRCS = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
-OBJS = $(SRCS:.c=.o)
 NAME = libft.a
+SRC = ./srcs/*.c
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(ARFLSGS) $(NAME) $(OBJS)
-
-%.0: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME):
+	gcc -Wall -Wextra -Werror -c $(SRC)
+	ar rcs $(NAME) *.o
 
 clean:
-	rm -f $(OBJS)
+	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
