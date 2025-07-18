@@ -1,5 +1,5 @@
 NOME = ft_display_file
-SRC = *.c
+SRC = ./srcs/*.c
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
